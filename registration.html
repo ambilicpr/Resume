@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="registration.css"> 
+</head>
+
+<body>
+    <form novalidate id="studentregistrationForm" onsubmit="return validateForm()">
+        <img src="bg.jpg" alt="Form background image">
+        <div class="container">
+            <div class="form-size">
+                <h4>STUDENT REGISTRATION FORM</h4>
+
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="sfname">Student's First Name:</label>
+                        <input type="text"  id="sfname"   placeholder="First name" required>
+                        <small class="error" id="nameMessage"></small>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="slname">Student's Last Name:</label>
+                        <input type="text"  id="slname"   placeholder="Last name" required>
+                        <small class="error" id="slnameMessage"></small>
+                    </div>
+                </div>                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="semail">Email:</label>
+                        <input type="email" id="semail"  placeholder="Email ID" required>
+                        <small class="error" id="emailMessage"></small>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="no">Mobile Number:</label>
+                        <input type="text"  id="no" maxlength="10" placeholder="Mobile Number" required>
+                        <small class="error" id="noMessage"></small>
+                    </div>
+                 </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="fname">Father Name:</label>
+                        <input type="text"  id="fname"  placeholder="Father Name" required>
+                        <small class="error" id="fnameMessage"></small>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="mname">Mother Name:</label>
+                        <input type="text"  id="mname"  placeholder="Mother name" required>
+                        <small class="error" id="mnameMessage"></small>
+                    </div>
+                </div>       
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for ="date">Birth Date:</label>
+                        <input type="date" id="date" placeholder="Date of Birth" required>
+                        <small class="error" id="dateMessage"></small>
+                    </div>
+                    <div class="col-md-6">
+                        <label for ="gender">Gender:</label>
+                        </br>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="transGender">TransGender</option>
+                        </select>
+                        <small class="error" id="genderMessage"></small>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for ="class">Class:</label>
+                    </br>
+                        <select id="std" name="std" required>
+                            <option value="">Select class</option>
+                            <option value="First">I</option>
+                            <option value="Second">II</option>
+                            <option value="Third">III</option>
+                            <option value="Forth">IV</option>
+                            <option value="Fifth">V</option>
+                            <option value="Sixth">VI</option>
+                            <option value="Seventh">VII</option>
+                            <option value="Eighth">VIII</option>
+                            <option value="Ninth">IX</option>
+                            <option value="Tenth">X</option>
+                        </select>
+                        <small class="error" id="classMessage"></small>
+                    </div>
+                    <div class="col-md-6">
+                    <label id="Address">Address:</label>
+                    <textarea id="address"  placeholder="House Address" ></textarea>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="pwd">Password:</label>
+                        <input type="password" id="pwd"  maxlength ="16" placeholder="Password" required>
+                        <small class="error" id="pwdMessage"></small>
+                        <div class="password-strength">
+                            <div class="password-meter" id="pwdmeter">
+                                <div class="meter-bar" id="meterbar"></div>            
+                            </div>
+                            <p id="strengthPwd">Strength:</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">  
+                        <label for="cpwd">Confirm Password:</label>
+                        <input type="password" id="cpwd" placeholder="Confirm Password" required>
+                        <small class="error" id="cpwdMessage"></small>
+                    </div>
+                </div>
+                <br>       
+                <button id="save" type="button" onclick="printform()">Save</button> 
+                <button id="buton" type="submit">Submit</button> 
+            </div>
+        </div> 
+        <div id="formErrorMessage" style="display: none; color: red;"></div>
+    </form>   
+    <div class="bgimage"></div>  
+    <script src="registration.js"></script>
+</body>
+</html>
